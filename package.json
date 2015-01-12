@@ -29,6 +29,8 @@
     "gulp-util": "~2.2.17"
   },
   "dependencies": {
+    "bluebird": "^2.6.4",
+    "errors": "^0.2.0",
     "scrypt": "^3.0.1"
   }
 }
