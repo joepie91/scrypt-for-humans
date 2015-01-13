@@ -29,6 +29,8 @@ As this module could potentially deal with authentication, tests are needed; a p
 
 Build tool of choice is `gulp`; simply run `gulp` while developing, and it will watch for changes.
 
+Be aware that by making a pull request, you agree to release your modifications under the licenses stated above.
+
 ## Usage
 
 ```javascript
