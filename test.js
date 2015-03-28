@@ -23,7 +23,7 @@ Promise.try(function(){
 }).then(function(){
 	console.log("Number 2 was correct!");
 }).catch(scrypt.PasswordError, function(err){
-	console.log("Number 2 was wrong!");
+	console.log("Number 2 was wrong!", err);
 });
 
 /* Using nodebacks */
