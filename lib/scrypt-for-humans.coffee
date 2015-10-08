@@ -44,7 +44,7 @@ scryptHandler = (resolve, reject) ->
 	# Well, `scrypt` now returns real Error objects. Except now they don't have error codes anymore...
 	return (err, result) ->
 		if err?
-			errorObj = switch scryptErrorMap[err.message]
+			errorObj = switch (scryptErrorMap[err.message] ? -1)
 				when 1, 2, 3, 4, 5, 6, 9, 10, 12, 13, -1 then errors.ScryptInternalError
 				when 7, 8 then errors.ScryptInputError
 				when 11 then errors.ScryptPasswordError
