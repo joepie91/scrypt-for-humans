@@ -7,7 +7,7 @@ This module will change and do the following things for you:
 * Input values (passwords, usually) are expected in utf-8.
 * Output/hash values are base64-encoded, and can be stored directly in your data store of choice.
 * Scrypt parameters are set to `scrypt.params(0.1)`, this can be overridden on a per-hash basis (see API documentation below).
-* Scrypt errors, which are not proper Error types in the original library, are caught and rethrown as one of three correctly-inheriting Error types (see API documentation below). This means you can handle them like any other kind of Error.
+* Scrypt errors, which are now proper Error types in the original library but still not easily distinguishable, are caught and rethrown as one of three correctly-inheriting Error types (see API documentation below). This means you can handle them like any other kind of Error.
 
 The API supports both Promises and nodebacks.
 
@@ -87,6 +87,12 @@ scrypt.hash("secretpassword", {}, function(err, hash){
 });
 ```
 
+## Upgrading to 2.0.0
+
+Due to changes in the underlying `scrypt` library, there has been a minor indirect change in our documented API as well. Specifically, `scrypt.scryptLib.params` is now asynchronous by default, with (poor) support for ES6 Promises. The new documentation can be found [here](https://github.com/barrysteyn/node-scrypt/blob/master/Readme.md#params). Due to its inconsistent behaviour, I recommend manual promisification using [Bluebird](https://www.npmjs.com/package/bluebird) or [`es6-promisify`](https://www.npmjs.com/package/es6-promisify).
+
+The other changes in `scrypt` do not affect the `scrypt-for-humans` API, other than introducing support for Node.js 4. If you were not using custom `params`, you can remain using `scrypt-for-humans` like you have done previously.
+
 ## API
 
 ### scrypt.hash(input, [options, [callback]])
@@ -95,7 +101,7 @@ Creates a hash.
 
 * __input__: The input to hash, usually a password.
 * __options__: *Optional.* Custom options.
-	* __options.params__: Sets the Scrypt parameters to use. Defaults to `scrypt.params(0.1)`. If you want to change these, you'll probably need scrypt.scryptLib (documented below).
+	* __options.params__: Sets the Scrypt parameters to use. Defaults to `scrypt.params(0.1)`. If you want to change these, you'll probably need `scrypt.scryptLib` (documented below).
 * __callback__: *Optional.* A nodeback to call upon completion. If omitted, the function will return a Promise.
 
 If this is successful, the hash is returned as either the resolved Promise value or the second callback parameter, depending on the API you use.

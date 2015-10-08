@@ -2,7 +2,6 @@ var scrypt = require("./");
 var Promise = require("bluebird");
 
 /* Using Promises */
-
 var theHash;
 
 Promise.try(function(){

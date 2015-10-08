@@ -1,6 +1,6 @@
 {
   "name": "scrypt-for-humans",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A human-friendly API wrapper for the Node.js Scrypt bindings.",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,6 @@
   "dependencies": {
     "bluebird": "^2.6.4",
     "errors": "^0.2.0",
-    "scrypt": "^4.0.7"
+    "scrypt": "^5.2.0"
   }
 }
