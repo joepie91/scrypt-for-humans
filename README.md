@@ -130,7 +130,7 @@ This error is thrown if the input did not match the specified hash. The original
 
 This error is thrown if there is a different problem with the input (either the to-be-hashed value, or the hash), such as a malformed hash. The original error message is retained.
 
-### scrypt.OperationalError
+### scrypt.InternalError
 
 This error is thrown when an internal error of some other kind occurs in the `scrypt` library. The original error message is retained.
 
