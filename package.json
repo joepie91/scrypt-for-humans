@@ -1,6 +1,6 @@
 {
   "name": "scrypt-for-humans",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A human-friendly API wrapper for the Node.js Scrypt bindings.",
   "main": "index.js",
   "scripts": {
