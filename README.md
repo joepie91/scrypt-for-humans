@@ -34,8 +34,8 @@ Be aware that by making a pull request, you agree to release your modifications 
 ## Usage
 
 ```javascript
-scrypt = require("scrypt-for-humans");
-Promise = require("bluebird");
+var scrypt = require("scrypt-for-humans");
+var Promise = require("bluebird");
 
 /* Using Promises */
 
