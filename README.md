@@ -110,7 +110,7 @@ If an error occurs, either the Promise will reject with it, or it will be passed
 
 ### scrypt.verifyHash(input, hash, [callback])
 
-Creates a hash.
+Verifies an input against a hash.
 
 * __input__: The input to hash, usually a password.
 * __hash__: The hash to verify against, in base64 encoding (the default output format of `scrypt.hash`).
